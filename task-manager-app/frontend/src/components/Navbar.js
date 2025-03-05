@@ -1,15 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useContext } from 'react';
 import { AppBar, Toolbar, Typography, Button, IconButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { TaskContext } from '../context/TaskContext';
+import { AuthContext } from '../context/AuthContext';
 
 const Navbar = () => {
-    const { user, logout } = useContext(TaskContext);
+    const { isAuthenticated, logout } = useContext(AuthContext);
+    const history = useHistory();
 
     const handleLogout = () => {
         logout();
+        history.push('/login');
     };
 
     return (
@@ -21,7 +23,7 @@ const Navbar = () => {
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                     <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>Task Manager</Link>
                 </Typography>
-                {user ? (
+                {isAuthenticated ? (
                     <>
                         <Button color="inherit" component={Link} to="/dashboard">Dashboard</Button>
                         <Button color="inherit" onClick={handleLogout}>Logout</Button>

@@ -5,11 +5,11 @@ import TaskForm from '../components/TaskForm';
 import { Container, Typography, Box } from '@mui/material';
 
 const Dashboard = () => {
-    const { tasks, fetchTasks } = useContext(TaskContext);
+    const { tasks, currentTask, setCurrentTask, fetchTasks } = useContext(TaskContext);
 
     useEffect(() => {
         fetchTasks();
-    }, [tasks]);
+    }, []);
 
     return (
         <Container>
@@ -17,7 +17,7 @@ const Dashboard = () => {
                 <Typography variant="h4" component="h1" gutterBottom>
                     Task Manager Dashboard
                 </Typography>
-                <TaskForm />
+                <TaskForm task={currentTask}/>
                 <TaskList tasks={tasks} />
             </Box>
         </Container>

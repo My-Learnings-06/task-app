@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { TextField, Button, Container, Typography, Box } from '@mui/material';
 import { useHistory } from 'react-router-dom';
-import { signup } from '../services/api';
+import { AuthContext } from '../context/AuthContext';
 
 const Signup = () => {
+    const { signup } = useContext(AuthContext);
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         password: ''
     });
     const [error, setError] = useState('');
-    const [nameError, setnameError] = useState('');
+    const [nameError, setNameError] = useState('');
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
     const history = useHistory();
@@ -29,13 +30,13 @@ const Signup = () => {
         e.preventDefault();
 
         let valid = true;
-        setnameError('');
+        setNameError('');
         setEmailError('');
         setPasswordError('');
         setError('');
 
         if (!formData.name) {
-            setnameError('Name is required.');
+            setNameError('Name is required.');
             valid = false;
         }
 
@@ -55,13 +56,10 @@ const Signup = () => {
         if (!valid) return;
 
         try {
-            const response = await signup(formData);
-            if (response?.data?.success) {
-                history.push('/login');
-            }
+            await signup(formData);
+            history.push('/login');
         } catch (err) {
-            console.log(err)
-            setError(err?.response?.data?.message);
+            setError('Signup failed. Please try again.');
         }
     };
 
@@ -69,7 +67,7 @@ const Signup = () => {
         <Container maxWidth="sm">
             <Box mt={4}>
                 <Typography variant="h4" component="h1" gutterBottom>
-                Signup
+                    Signup
                 </Typography>
                 {error && <p className="error">{error}</p>}
                 <form onSubmit={handleSubmit}>
@@ -78,8 +76,9 @@ const Signup = () => {
                         variant="outlined"
                         fullWidth
                         margin="normal"
+                        name="name"
                         value={formData.name}
-                        onChange={(e) => setFormData({...formData, name: e.target.value})}
+                        onChange={handleChange}
                         error={!!nameError}
                         helperText={nameError}
                     />
@@ -88,8 +87,9 @@ const Signup = () => {
                         variant="outlined"
                         fullWidth
                         margin="normal"
+                        name="email"
                         value={formData.email}
-                        onChange={(e) => setFormData({...formData, email: e.target.value})}
+                        onChange={handleChange}
                         error={!!emailError}
                         helperText={emailError}
                     />
@@ -99,8 +99,9 @@ const Signup = () => {
                         variant="outlined"
                         fullWidth
                         margin="normal"
+                        name="password"
                         value={formData.password}
-                        onChange={(e) => setFormData({...formData, password: e.target.value})}
+                        onChange={handleChange}
                         error={!!passwordError}
                         helperText={passwordError}
                     />

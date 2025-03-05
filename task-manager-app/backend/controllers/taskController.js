@@ -26,6 +26,17 @@ exports.getTasks = async (req, res) => {
     }
 };
 
+// Get all tasks for the logged-in user
+exports.getTask = async (req, res) => {
+    const { id } = req.params;
+    try {
+        const tasks = await taskService.getTask(id, req.user.id);
+        res.status(200).json(tasks);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
 // Update a task
 exports.updateTask = async (req, res) => {
     const { id } = req.params;

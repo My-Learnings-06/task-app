@@ -46,6 +46,17 @@ exports.loginUser = async (req, res) => {
     }
 };
 
+// Logout user and get token
+exports.logoutUser = async (req, res) => {
+    const { email, password } = req.body;
+    try {
+        res.cookie('token', '', { maxAge: 0 });
+        res.status(200).json({ message: 'Logged out successfully' });
+    } catch (error) {
+        res.status(401).json({ message: error.message });
+    }
+};
+
 // Get user profile
 exports.getUserProfile = async (req, res) => {
     const user = req.user;

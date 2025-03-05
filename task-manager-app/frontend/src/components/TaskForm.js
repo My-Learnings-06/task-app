@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useContext } from 'react';
 import { TaskContext } from '../context/TaskContext';
-import { TextField, Button, Box, FormControlLabel } from '@mui/material';
+import { TextField, Button, Box, FormControlLabel, Checkbox } from '@mui/material';
 
 const TaskForm = ({ task, onSubmit }) => {
-    const { createTask, updateTask } = useContext(TaskContext);
+    const { createTask, currentTask, setCurrentTask, updateTask } = useContext(TaskContext);
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [completed, setCompleted] = useState(false);

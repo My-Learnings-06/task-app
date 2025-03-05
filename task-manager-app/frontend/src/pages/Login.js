@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { TextField, Button, Container, Typography, Box } from '@mui/material';
-import axios from 'axios';
-import { login } from '../services/api'; // Import the login function
-
+import { AuthContext } from '../context/AuthContext';
 
 const Login = () => {
+    const { login } = useContext(AuthContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -41,9 +40,7 @@ const Login = () => {
         if (!valid) return;
 
         try {
-            const response = await login({email, password});
-            console.log('response:', response);
-            document.cookie = `token=${response.data.token}; HttpOnly`;
+            await login({ email, password });
             history.push('/dashboard');
         } catch (err) {
             setError('Invalid credentials. Please try again.');
@@ -54,7 +51,7 @@ const Login = () => {
         <Container maxWidth="sm">
             <Box mt={4}>
                 <Typography variant="h4" component="h1" gutterBottom>
-                Login
+                    Login
                 </Typography>
                 {error && <p className="error">{error}</p>}
                 <form onSubmit={handleSubmit}>

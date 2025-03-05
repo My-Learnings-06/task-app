@@ -1,5 +1,5 @@
 const express = require('express');
-const { registerUser, loginUser, getUserProfile, deleteUser } = require('../controllers/userController');
+const { registerUser, loginUser, getUserProfile, logoutUser, deleteUser } = require('../controllers/userController');
 const { protect } = require('../middleware/authMiddleware');
 const asyncHandler = require('../middleware/asyncHandler');
 const { registerUserValidator, loginUserValidator } = require('../validators/userValidator');
@@ -12,6 +12,9 @@ router.post('/register', registerUserValidator, validate, asyncHandler(registerU
 
 // Authenticate user and get token
 router.post('/login', loginUserValidator, validate, asyncHandler(loginUser));
+
+// Authenticate user and get token
+router.post('/logout', protect, asyncHandler(logoutUser));
 
 // Get user profile
 router.get('/profile', protect, asyncHandler(getUserProfile));

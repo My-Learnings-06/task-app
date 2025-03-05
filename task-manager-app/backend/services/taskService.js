@@ -11,6 +11,11 @@ const getTasks = async (userId) => {
     return tasks;
 };
 
+const getTask = async (id, userId) => {
+    const tasks = await Task.findOne({ _id: id, userId });
+    return tasks;
+};
+
 const updateTask = async (id, userId, taskData) => {
     const task = await Task.findByIdAndUpdate({ _id: id, userId}, taskData, { new: true });
     return task;
@@ -23,6 +28,7 @@ const deleteTask = async (id, userId) => {
 
 module.exports = {
     createTask,
+    getTask,
     getTasks,
     updateTask,
     deleteTask
