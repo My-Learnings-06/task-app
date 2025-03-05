@@ -9,6 +9,8 @@ const taskRoutes = require('./routes/taskRoutes');
 const userRoutes = require('./routes/userRoutes');
 const errorHandler = require('./middleware/errorMiddleware');
 const notFound = require('./middleware/notFoundMiddleware');
+const loggerMiddleware = require('./middleware/loggerMiddleware');
+const logger = require('./config/logger');
 
 dotenv.config();
 
@@ -37,6 +39,9 @@ app.use(limiter);
 app.use(express.json());
 app.use(cookieParser());
 
+// Use logger middleware
+app.use(loggerMiddleware);
+
 app.use(async (req, res, next) => {
     res.removeHeader('X-Powered-By');
     next();
@@ -51,5 +56,5 @@ app.use(errorHandler);
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    logger.info(`Server running on port ${PORT}`);
 });

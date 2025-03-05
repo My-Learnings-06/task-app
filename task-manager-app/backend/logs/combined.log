@@ -1,0 +1,86 @@
+2025-03-05T05:34:58.563Z [32minfo[39m: Server running on port 5000
+2025-03-05T05:35:12.356Z [32minfo[39m: Server running on port 5000
+2025-03-05T05:38:15.113Z [32minfo[39m: Server running on port 5000
+2025-03-05T05:38:22.075Z [32minfo[39m: GET /
+2025-03-05T05:38:22.403Z [32minfo[39m: GET /favicon.ico
+2025-03-05T05:38:40.962Z [32minfo[39m: GET /tasks
+2025-03-05T05:38:57.364Z [32minfo[39m: Server running on port 5000
+2025-03-05T05:39:00.274Z [32minfo[39m: Server running on port 5000
+2025-03-05T05:39:04.647Z [32minfo[39m: GET /api/tasks
+2025-03-05T05:39:10.839Z [32minfo[39m: GET /api/users
+2025-03-05T05:39:27.541Z [32minfo[39m: GET /api/register
+2025-03-05T05:47:53.345Z [32minfo[39m: GET /api/tasks
+2025-03-05T05:51:50.142Z [32minfo[39m: GET /api/dashboard
+2025-03-05T05:52:01.340Z [32minfo[39m: GET /api/profile
+2025-03-05T05:52:54.994Z [32minfo[39m: GET /api/users/profile
+2025-03-05T05:53:15.507Z [32minfo[39m: Server running on port 5000
+2025-03-05T05:53:31.177Z [32minfo[39m: GET /api/tasks
+2025-03-05T05:54:48.971Z [32minfo[39m: GET /api/signup
+2025-03-05T05:55:00.723Z [32minfo[39m: GET /api/register
+2025-03-05T05:55:05.123Z [32minfo[39m: GET /api/users/register
+2025-03-05T05:55:07.782Z [32minfo[39m: GET /api/users/register
+2025-03-05T05:55:11.366Z [32minfo[39m: POST /api/users/register
+2025-03-05T05:55:25.361Z [32minfo[39m: POST /api/users/login
+2025-03-05T05:56:06.229Z [32minfo[39m: Server running on port 5000
+2025-03-05T05:56:07.313Z [32minfo[39m: Server running on port 5000
+2025-03-05T05:56:07.924Z [32minfo[39m: POST /api/users/login
+2025-03-05T05:56:50.271Z [32minfo[39m: POST /api/users/login
+2025-03-05T05:56:59.024Z [32minfo[39m: GET /api/users/profile
+2025-03-05T05:57:50.022Z [32minfo[39m: DELETE /api/users/67c7e73ff3f7763c22129d18
+2025-03-05T05:58:16.227Z [32minfo[39m: GET /api/users/profile
+2025-03-05T05:58:43.378Z [32minfo[39m: Server running on port 5000
+2025-03-05T05:58:44.376Z [32minfo[39m: GET /api/users/profile
+2025-03-05T05:58:51.921Z [32minfo[39m: Server running on port 5000
+2025-03-05T05:59:12.195Z [32minfo[39m: POST /api/users/register
+2025-03-05T06:00:54.007Z [32minfo[39m: Server running on port 5000
+2025-03-05T06:03:56.920Z [32minfo[39m: Server running on port 5000
+2025-03-05T06:03:59.906Z [32minfo[39m: POST /api/users/register
+2025-03-05T06:04:02.412Z [32minfo[39m: POST /api/users/register
+2025-03-05T06:04:03.880Z [32minfo[39m: POST /api/users/register
+2025-03-05T06:05:56.546Z [32minfo[39m: Server running on port 5000
+2025-03-05T06:06:00.344Z [32minfo[39m: POST /api/users/register
+2025-03-05T06:06:01.870Z [32minfo[39m: POST /api/users/register
+2025-03-05T06:06:08.228Z [32minfo[39m: POST /api/users/register
+2025-03-05T06:06:09.464Z [32minfo[39m: POST /api/users/register
+2025-03-05T06:06:29.283Z [32minfo[39m: GET /api/users/profile
+2025-03-05T06:06:39.949Z [32minfo[39m: POST /api/users/login
+2025-03-05T06:06:47.905Z [32minfo[39m: DELETE /api/users/67c7e9d01158655675fb7a9a
+2025-03-05T06:06:57.207Z [32minfo[39m: POST /api/users/register
+2025-03-05T06:07:36.582Z [32minfo[39m: Server running on port 5000
+2025-03-05T06:07:39.281Z [32minfo[39m: Server running on port 5000
+2025-03-05T06:08:25.924Z [32minfo[39m: Server running on port 5000
+2025-03-05T06:08:28.282Z [32minfo[39m: POST /api/users/register
+2025-03-05T06:08:30.121Z [32minfo[39m: POST /api/users/register
+2025-03-05T06:08:31.327Z [32minfo[39m: POST /api/users/register
+2025-03-05T06:08:32.528Z [32minfo[39m: POST /api/users/register
+2025-03-05T06:08:36.133Z [32minfo[39m: POST /api/users/register
+2025-03-05T06:08:37.532Z [32minfo[39m: POST /api/users/register
+2025-03-05T06:08:48.563Z [32minfo[39m: POST /api/users/login
+2025-03-05T06:08:57.207Z [32minfo[39m: DELETE /api/users/67c7ea64280e9e5bd9ca441a
+2025-03-05T06:09:27.988Z [32minfo[39m: Server running on port 5000
+2025-03-05T06:09:39.477Z [32minfo[39m: POST /api/users/register
+2025-03-05T06:09:41.681Z [32minfo[39m: POST /api/users/register
+2025-03-05T06:10:37.639Z [32minfo[39m: POST /api/users/register
+2025-03-05T06:10:44.565Z [32minfo[39m: POST /api/users/register
+2025-03-05T06:10:47.824Z [32minfo[39m: POST /api/users/register
+2025-03-05T06:10:57.679Z [32minfo[39m: POST /api/users/register
+2025-03-05T06:11:09.970Z [32minfo[39m: POST /api/users/login
+2025-03-05T06:11:13.672Z [32minfo[39m: POST /api/users/login
+2025-03-05T06:11:20.289Z [32minfo[39m: DELETE /api/users/67c7eadd4c26875e2a8359ae
+2025-03-05T06:12:00.404Z [32minfo[39m: DELETE /api/users/67c7eadd4c26875e2a8359ae
+2025-03-05T06:12:03.888Z [32minfo[39m: DELETE /api/users/67c7eadd4c26875e2a8359ae
+2025-03-05T06:12:12.053Z [32minfo[39m: POST /api/users/register
+2025-03-05T06:12:48.360Z [32minfo[39m: POST /api/users/login
+2025-03-05T06:12:52.783Z [32minfo[39m: POST /api/users/login
+2025-03-05T06:13:33.944Z [32minfo[39m: POST /api/users/login
+2025-03-05T06:13:48.515Z [32minfo[39m: POST /api/tasks/
+2025-03-05T06:14:01.450Z [32minfo[39m: PUT /api/tasks/
+2025-03-05T06:14:14.939Z [32minfo[39m: GET /api/tasks/
+2025-03-05T06:14:22.501Z [32minfo[39m: PUT /api/tasks/67c7eb9c4c26875e2a8359c8
+2025-03-05T06:14:30.333Z [32minfo[39m: DELETE /api/tasks/67c7eb9c4c26875e2a8359c8
+2025-03-05T06:14:50.618Z [32minfo[39m: POST /api/tasks
+2025-03-05T06:15:12.882Z [32minfo[39m: PUT /api/tasks/67c7ebda4c26875e2a8359d2
+2025-03-05T06:16:31.707Z [32minfo[39m: POST /api/tasks
+2025-03-05T06:16:32.993Z [32minfo[39m: POST /api/tasks
+2025-03-05T06:16:33.869Z [32minfo[39m: POST /api/tasks
+2025-03-05T06:16:34.852Z [32minfo[39m: POST /api/tasks
