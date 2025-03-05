@@ -23,10 +23,12 @@ app.use(helmet());
 
 // Configure CORS
 const corsOptions = {
-    origin: 'http://your-frontend-domain.com', // Replace with your frontend domain
-    optionsSuccessStatus: 200
+    origin: 'https://probable-space-system-w57vj4p6972gg5r-9000.app.github.dev', // Replace with your frontend's origin
+    credentials: true,
+    // optionsSuccessStatus: 200
 };
-app.use(cors(corsOptions));
+app.use(cors({origin: 'https://probable-space-system-w57vj4p6972gg5r-9000.app.github.dev', // Replace with your frontend's origin
+    credentials: true,}));
 
 // Rate limiting
 const limiter = rateLimit({

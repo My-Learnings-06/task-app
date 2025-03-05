@@ -2,17 +2,47 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { TextField, Button, Container, Typography, Box } from '@mui/material';
 import axios from 'axios';
+import { login } from '../services/api'; // Import the login function
+
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const [emailError, setEmailError] = useState('');
+    const [passwordError, setPasswordError] = useState('');
     const history = useHistory();
+
+    const validateEmail = (email) => {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        let valid = true;
+        setEmailError('');
+        setPasswordError('');
+        setError('');
+
+        if (!email) {
+            setEmailError('Email is required.');
+            valid = false;
+        } else if (!validateEmail(email)) {
+            setEmailError('Invalid email format.');
+            valid = false;
+        }
+
+        if (!password) {
+            setPasswordError('Password is required.');
+            valid = false;
+        }
+
+        if (!valid) return;
+
         try {
-            const response = await axios.post('/api/auth/login', { email, password });
+            const response = await login({email, password});
+            console.log('response:', response);
             document.cookie = `token=${response.data.token}; HttpOnly`;
             history.push('/dashboard');
         } catch (err) {
@@ -35,6 +65,8 @@ const Login = () => {
                         margin="normal"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        error={!!emailError}
+                        helperText={emailError}
                     />
                     <TextField
                         label="Password"
@@ -44,6 +76,8 @@ const Login = () => {
                         margin="normal"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                        error={!!passwordError}
+                        helperText={passwordError}
                     />
                     <Button type="submit" variant="contained" color="primary" fullWidth>
                         Login
